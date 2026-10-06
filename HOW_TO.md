@@ -1,6 +1,6 @@
-# 🚀 How-To: Deploy do Dimdim Music Library na Azure
+#  How-To: Deploy do Dimdim Music Library na Azure
 
-## 📌 Pré-requisitos
+##  Pré-requisitos
 
 - Java 21
 - Maven
@@ -26,7 +26,7 @@ az login
 
 ---
 
-## 🔹 1. Criar Resource Group
+##  1. Criar Resource Group
 
 ```powershell
 az group create `
@@ -36,7 +36,7 @@ az group create `
 
 ---
 
-## 🔹 2. Criar Azure SQL Server
+##  2. Criar Azure SQL Server
 
 ```powershell
 az sql server create `
@@ -50,7 +50,7 @@ az sql server create `
 
 ---
 
-## 🔹 3. Criar Banco de Dados
+##  3. Criar Banco de Dados
 
 ```powershell
 az sql db create `
@@ -62,7 +62,7 @@ az sql db create `
 
 ---
 
-## 🔹 4. Configurar Firewall
+##  4. Configurar Firewall
 
 ```powershell
 az sql server firewall-rule create `
@@ -86,7 +86,7 @@ az sql server firewall-rule create `
 
 ---
 
-## 🔹 5. Criar Tabelas
+##  5. Criar Tabelas
 
 O banco utiliza duas tabelas relacionadas:
 
@@ -123,7 +123,7 @@ musicas.album_id → albuns.id
 
 ---
 
-## 🔹 6. Criar App Service Plan
+##  6. Criar App Service Plan
 
 ```powershell
 az appservice plan create `
@@ -136,7 +136,7 @@ az appservice plan create `
 
 ---
 
-## 🔹 7. Criar Web App
+##  7. Criar Web App
 
 ```powershell
 az webapp create `
@@ -148,7 +148,7 @@ az webapp create `
 
 ---
 
-## 🔹 8. Configurar Banco no Web App
+##  8. Configurar Banco no Web App
 
 A aplicação utiliza as variáveis:
 
@@ -172,7 +172,7 @@ az webapp config appsettings set `
 
 ---
 
-## 🔹 9. Configurar Application Insights
+##  9. Configurar Application Insights
 
 Criar:
 
@@ -204,7 +204,7 @@ az webapp config appsettings set `
 
 ---
 
-## 🔹 10. Compilar a aplicação
+##  10. Compilar a aplicação
 
 Na raiz do projeto:
 
@@ -220,7 +220,7 @@ target/dimdim-music-1.0.0.jar
 
 ---
 
-## 🔹 11. Publicar na Azure
+##  11. Publicar na Azure
 
 ```powershell
 az webapp deploy `
@@ -232,7 +232,7 @@ az webapp deploy `
 
 ---
 
-## 🔹 12. Testar a API
+##  12. Testar a API
 
 ### Swagger
 
@@ -248,7 +248,7 @@ https://dimdim-music-565562.azurewebsites.net/health
 
 ---
 
-## 🔹 13. Endpoints
+## 13. Endpoints
 
 ### Álbuns
 
@@ -293,7 +293,7 @@ Exemplo de criação de música:
 
 ---
 
-## 🔹 14. Validar Persistência
+##  14. Validar Persistência
 
 Verificar os dados no Azure SQL:
 
@@ -313,7 +313,7 @@ E verificar a persistência dos dados no banco após as operações.
 
 ---
 
-## 🔹 15. Evidências
+##  15. Evidências
 
 As evidências dos testes estão em:
 
@@ -323,7 +323,7 @@ docs/evidencias/
 
 ---
 
-## 🔹 16. GitHub
+##  16. GitHub
 
 Repositório:
 
